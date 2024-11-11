@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Poppins', sans;
+}
+body {
+  position: relative;
+  background-image: url(../imagenes/fondo.avif);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+body::after {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+
+body > * {
+  position: relative;
+  z-index: 2;
+}
+.cabecera{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1px;
+  background-color:black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+}
+ .logo{
+    font-size: 10vh;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #fff;
+    margin: 0 0 0 20vh;
+}.nav{
+  display: flex;
+  align-items: center;
+  margin: 0 20vh 0 0;
+}
+
+.menu{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+ul{
+  display: flex;
+}
+li,a{
+  list-style: none;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* CONFICURACION DE BOTON DE BUSQUEDA*/ 
+.input {
+  max-width: 190px;
+  background-color: #fcfbfb;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+}
+
+.input:focus {
+  animation: rotateShadow 2s infinite linear;
+}
+
+@keyframes rotateShadow {
+  0% {
+    box-shadow: -2px -2px 8px 1px #aa00ff, 2px 2px 8px 1px #3700ff;
+  }
+  25% {
+    box-shadow: -2px 2px 8px 1px #aa00ff, 2px -2px 8px 1px #3700ff;
+  }
+  50% {
+    box-shadow: 2px 2px 8px 1px #aa00ff, -2px -2px 8px 1px #3700ff;
+  }
+  75% {
+    box-shadow: 2px -2px 8px 1px #aa00ff, -2px 2px 8px 1px #3700ff;
+  }
+  100% {
+    box-shadow: -2px -2px 8px 1px #aa00ff, 2px 2px 8px 1px #3700ff;
+  }
+}
+
+/* AJUSTES BOTONERA INICIAL */ 
+.btnnav{
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+  margin: 0 8px 0 8px;
+}
+
+.btnnav:focus,
+.btnnav:hover {
+  color: #fff;
+}
+
+.btnnav:focus:after,
+.btnnav:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.btnnav:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-image: conic-gradient(
+		#e440bb,
+		#655adc,
+		#488cfb
+	);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+/*AJUSTES DE BANNER */
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:15vh 0 15vh 0;
+
+}
+.introduccion{
+    width:50%;
+    color: white;
+}
+.btn-ver-mas{
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 20vh;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.btn-ver-mas:hover{
+    background:#ccc;
+    color:#000;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20vh;
+    margin-top: 10vh;
+    padding: 12vh;
+    border: 2px solid blue;
+    border-radius: 5px;
+    background-color:rgba(7, 7, 7, 0.479) ;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 15px ;
+    margin-bottom: 30px;
+    width: 100%;
+    outline: none;
+    color: #ccc;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.reds1{
+  color: #fff;
+  margin: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* From Uiverse.io by vishnupprajapat */ 
+.checkbox-wrapper-46 input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-wrapper-46 .cbx {
+  margin: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.checkbox-wrapper-46 .cbx span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+  color: #fff;
+}
+.checkbox-wrapper-46 .cbx span:first-child {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #9098a9;
+  transition: all 0.2s ease;
+}
+.checkbox-wrapper-46 .cbx span:first-child svg {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-46 .cbx span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #506eec;
+  display: block;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 50%;
+}
+.checkbox-wrapper-46 .cbx span:last-child {
+  padding-left: 8px;
+}
+.checkbox-wrapper-46 .cbx:hover span:first-child {
+  border-color: #506eec;
+}
+
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+  background: #506eec;
+  border-color: #506eec;
+  animation: wave-46 0.4s ease;
+}
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+  transform: scale(3.5);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+@keyframes wave-46 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+.enviar {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #149CEA;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 2vh 0 2vh 0;
+}
+
+.enviar::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.enviar::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  transition: 0.5s;
+}
+
+.enviar:hover::before, .enviar:hover::after {
+  transform: scale(0)
+}
+
+.enviar:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}
+/*AJUSTES GALERIA*/
+.galeria{
+    display: flex;
+    width: 100%;
+    height: 460px;
+}
+.galeria img{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+.galeria img:hover{
+    cursor: crosshair;
+    width: 250px;
+    opacity: 1;
+    filter:contrast(120%);
+}
